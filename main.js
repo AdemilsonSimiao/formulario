@@ -39,7 +39,6 @@ function salvar () {
 
 function mostrar () {
     var table = document.getElementById('t-body');
-
     db.transaction(function(tx){
         tx.executeSql('SELECT * FROM tabela',[], function(tx, resultado){
             var rows = resultado.rows;

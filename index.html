@@ -15,42 +15,32 @@
 <body>
     <form action="." method="get" id="form">
         <input type="hidden" id="id-atualizar" value="">
-        <div>
-            <label for="Nome">Nome:
-                <input type="text" name="nome" id="nome" placeholder="Nome" value="" required>
-            </label>
-            <label for="Sobrenome">Sobrenome:
-                <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" required>
-            </label>
-            <label for="CPF">CPF:
-                <input type="text" name="cpf" id="cpf" mask="" placeholder="000.000.000-00" class="is-invalid" maxlength="14" value="" onblur="ValidarCPF(this.value);">
-            </label>
-            <label for="E-mail">E-mail:
-                <input type="email" name="email" id="email" placeholder="teste@teste.com" >
-            </label>
-            <label for="Telefone">Telefone:
-                <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" required>
-            </label>
-        </div>
-        <div>
-            <label for="CEP">CEP:</label>
-            <input type="text" name="cep" id="cep" placeholder="00000-000" maxlength="9" value="" onblur="pesquisa(this.value,);" required>
-            <label for="Endereco">Endereço:</label>
-            <input type="text" name="endereco" id="endereco" placeholder="Endereço" required>
-            <label for="Numero">Numero:</label>
-            <input type="text" name="numero" id="numero" placeholder="Numero" required>
-            <label for="Complemento">Complemento:</label>
-            <input type="text" name="complemento" id="complemento" placeholder="Complemento" >
-            <label for="Bairro">Bairro:</label>
-            <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
-            <label for="Cidade">Cidade:</label>
-            <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
-            <label for="Estado">Estado:</label>
-            <input type="text" name="estado" id="estado" placeholder="Estado" required>
-        </div>
+        <label for="Nome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="Nome" value="" required>
+        <label for="Sobrenome">Sobrenome:</label>
+        <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" required>
+        <label for="CPF">CPF:</label>
+        <input type="text" name="cpf" id="cpf" mask="" placeholder="000.000.000-00" class="is-invalid" maxlength="14" value="" onblur="ValidarCPF(this.value);">
+        <label for="E-mail">E-mail:</label>
+        <input type="email" name="email" id="email" placeholder="teste@teste.com" >
+        <label for="Telefone">Telefone:</label>
+        <input type="text" name="telefone" id="telefone" placeholder="(00) 00000-0000" required>
+        <label for="CEP">CEP:</label>
+        <input type="text" name="cep" id="cep" placeholder="00000-000" maxlength="9" value="" onblur="pesquisa(this.value,);" required>
+        <label for="Endereco">Endereço:</label>
+        <input type="text" name="endereco" id="endereco" placeholder="Endereço" required>
+        <label for="Numero">Numero:</label>
+        <input type="text" name="numero" id="numero" placeholder="Numero" required>
+        <label for="Complemento">Complemento:</label>
+        <input type="text" name="complemento" id="complemento" placeholder="Complemento" >
+        <label for="Bairro">Bairro:</label>
+        <input type="text" name="bairro" id="bairro" placeholder="Bairro" required>
+        <label for="Cidade">Cidade:</label>
+        <input type="text" name="cidade" id="cidade" placeholder="Cidade" required>
+        <label for="Estado">Estado:</label>
+        <input type="text" name="estado" id="estado" placeholder="Estado" required>
         <button class="btn" id="btn-deletar" onclick="apagar()">Apagar</button>
         <button type="submit" class="btn" id="btn" >Enviar</button>
-        
     </form>
     <div class="listagem">
         <table>

@@ -3,13 +3,36 @@
     box-sizing: border-box;
     padding: 0;
 }
-#form{
-    max-width: 1070px;
-    margin: auto;
+body{
+    background-color: #eee;
 }
+#form{
+    display: grid;
+    max-width: 970px;
+    margin: auto;
+    padding-top: 10px;
+    width: 40%;
+    grid-template-columns: 1fr 1fr;
+}
+#form label{
+    padding-right: 10px;
+    text-align: end;
+}
+#form input{
+    margin-bottom: 10px;
+}
+#form button{
+    width: 50%;
+    justify-items: end;
+}
+
 .listagem{
     display: grid;
     justify-content: center;
+    text-align: center;
+}
+.listagem h1{
+    padding-top: 30px;
 }
 thead{
     background-color: #ccc;
@@ -17,6 +40,6 @@ thead{
 thead th{
     width: 100vh;
 }
-tbody{
+tr{
     background-color: #ccc;
 }
