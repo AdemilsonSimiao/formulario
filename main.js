@@ -32,7 +32,6 @@ function salvar () {
         }else{
             tx.executeSql('INSERT INTO tabela (nome, sobrenome, email, telefone, cpf, cep, endereco, numero, complemento, bairro, cidade, estado ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)',[nome,sobrenome,email,telefone,cpf,cep,endereco,numero,complemento,bairro,cidade,estado]);
         }
-        
     });
     mostrar();
 }
@@ -52,11 +51,9 @@ function mostrar () {
                 tr += '</tr>';
             }
             table.innerHTML = tr;
-
         });
     },null);
 }
-
 function atualizar (_id) {
     
     var id = document.getElementById('id-atualizar');
