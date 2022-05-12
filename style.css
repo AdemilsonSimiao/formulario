@@ -25,21 +25,28 @@ body{
     width: 50%;
     justify-items: end;
 }
-
 .listagem{
     display: grid;
     justify-content: center;
     text-align: center;
+    width: 90%;
+    margin: auto;
 }
 .listagem h1{
-    padding-top: 30px;
-}
-thead{
-    background-color: #ccc;
+    padding: 30px 0;
 }
 thead th{
-    width: 100vh;
-}
-tr{
+    width: 90vw;
+    border: 1px solid #eee;
+    border-radius: 4px;
     background-color: #ccc;
+    
+}
+thead tr{
+    font-size: 1.3em;
+}
+#t-body td{
+    border: 1px solid #ccc;
+    background-color: #ddd;
+    border-radius: 4px;
 }

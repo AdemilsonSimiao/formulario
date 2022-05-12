@@ -40,18 +40,19 @@ function salvar () {
 function mostrar () {
     var table = document.getElementById('t-body');
     db.transaction(function(tx){
-        tx.executeSql('SELECT * FROM tabela',[], function(tx, resultado){
+        tx.executeSql("SELECT *  FROM tabela",[], function(tx, resultado){
             var rows = resultado.rows;
             var tr = '';
             for(var i = 0; i < rows.length; i++){
                 tr += '<tr>';
-                tr += '<td onClick="atualizar('+ rows[i].id +')">' + rows[i].nome + '<td>';
-                tr += '<td>' + rows[i].sobrenome + '<td>';
-                tr += '<td>' + rows[i].telefone + '<td>';
-                tr += '<td>' + rows[i].email + '<td>';
+                tr += '<td onClick="atualizar('+ rows[i].id +')">' + rows[i].nome + '</td>';
+                tr += '<td>' + rows[i].sobrenome + '</td>';
+                tr += '<td>' + rows[i].telefone + '</td>';
+                tr += '<td>' + rows[i].email + '</td>';
                 tr += '</tr>';
             }
             table.innerHTML = tr;
+
         });
     },null);
 }
