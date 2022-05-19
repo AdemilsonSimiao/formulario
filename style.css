@@ -49,3 +49,9 @@ thead tr{
     background-color: #ddd;
     border-radius: 4px;
 }
+.botoes{
+    display: flex;
+}
+#btn{
+    margin: 0 10px;
+}

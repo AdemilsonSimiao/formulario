@@ -12,7 +12,6 @@ function carregado () {
 }
 
 function salvar () {
-    var id = document.getElementById('id-atualizar').value;
     var nome = document.getElementById('nome').value;
     var sobrenome = document.getElementById('sobrenome').value;
     var email = document.getElementById('email').value;
@@ -27,13 +26,32 @@ function salvar () {
     var estado = document.getElementById('estado').value;
 
     db.transaction(function(tx){
-        if(id){
-            tx.executeSql('UPDATE tabela SET nome=?, sobrenome=?, email=?, telefone=?, cpf=?, cep=?, endereco=?, numero=?, complemento=?, bairro=?, cidade=?, estado=? WHERE id=?',[nome,sobrenome,email,telefone,cpf,cep,endereco,numero,complemento,bairro,cidade,estado,id]);
-        }else{
+        if(sobrenome!==""){
             tx.executeSql('INSERT INTO tabela (nome, sobrenome, email, telefone, cpf, cep, endereco, numero, complemento, bairro, cidade, estado ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)',[nome,sobrenome,email,telefone,cpf,cep,endereco,numero,complemento,bairro,cidade,estado]);
+            mostrar()
         }
     });
-    mostrar();
+}
+function editar(){
+    db.transaction(function(tx){
+        var id = document.getElementById('id-atualizar').value;
+        var nome = document.getElementById('nome').value;
+        var sobrenome = document.getElementById('sobrenome').value;
+        var email = document.getElementById('email').value;
+        var telefone = document.getElementById('telefone').value;
+        var cpf = document.getElementById('cpf').value;
+        var cep = document.getElementById('cep').value;
+        var endereco = document.getElementById('endereco').value;
+        var numero = document.getElementById('numero').value;
+        var complemento = document.getElementById('complemento').value;
+        var bairro = document.getElementById('bairro').value;
+        var cidade = document.getElementById('cidade').value;
+        var estado = document.getElementById('estado').value;
+        if(id){
+            tx.executeSql('UPDATE tabela SET nome=?, sobrenome=?, email=?, telefone=?, cpf=?, cep=?, endereco=?, numero=?, complemento=?, bairro=?, cidade=?, estado=? WHERE id=?',[nome,sobrenome,email,telefone,cpf,cep,endereco,numero,complemento,bairro,cidade,estado,id]);
+        }
+        mostrar()
+    });
 }
 
 function mostrar () {
@@ -55,7 +73,6 @@ function mostrar () {
     },null);
 }
 function atualizar (_id) {
-    
     var id = document.getElementById('id-atualizar');
     var nome = document.getElementById('nome');
     var sobrenome = document.getElementById('sobrenome');
@@ -92,8 +109,8 @@ function atualizar (_id) {
 }
 
 function apagar () {
-    var id = document.getElementById('id-atualizar').value;
+    var _id = document.getElementById('id-atualizar').value;
     db.transaction(function(tx){
-        tx.executeSql('DELETE FROM tabela WHERE id=?', [id]);
+        tx.executeSql('DELETE FROM tabela WHERE id=?', [_id]);
     });
 }
